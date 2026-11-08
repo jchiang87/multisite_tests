@@ -34,7 +34,7 @@ nodes:
    depends_on: [step3b-step3c]
  - id: step4b
    bps_yaml: bps_step4b.yaml
-   depends_on: [step4a]
+   depends_on: [step2d]
  - id: step4c
    bps_yaml: bps_step4c.yaml
    depends_on: [step4b]
@@ -43,4 +43,4 @@ nodes:
    depends_on: [step4c]
 # - id: step4f
 #   bps_yaml: bps_step4f.yaml
-#   depends_on: [step4d-step4e]
+#   depends_on: [step4c]
