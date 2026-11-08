@@ -1,0 +1,9 @@
+includeConfigs:
+- /sdf/data/rubin/user/jchiang/CM/multisite/bps/bps_baseline.yaml
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step4d-measure-variability-global,step4e-measure-variability-rgb"
+
+payload:
+  dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2' and tract in (7040, 7041, 7276, 7277)"
+
+extraQgraphOptions: "-c parameters:base_uri=/sdf/data/rubin/shared/hips_views/LSSTCam/runs/DRP/DM-56219"

@@ -1,0 +1,46 @@
+workflow: multisite_95_visits
+nodes:
+ - id: step1a-step1b
+   bps_yaml: bps_step1a_step1b.yaml
+ - id: step1c-step1d
+   bps_yaml: bps_step1c_step1d.yaml
+   depends_on: [step1a-step1b]
+ - id: step2a
+   bps_yaml: bps_step2a.yaml
+   depends_on: [step1c-step1d]
+ - id: step2c
+   bps_yaml: bps_step2c.yaml
+   depends_on: [step2a]
+ - id: step2d
+   bps_yaml: bps_step2d.yaml
+   depends_on: [step2c]
+ - id: step2e-step2f
+   bps_yaml: bps_step2e_step2f.yaml
+   depends_on: [step2d]
+ - id: step3-warps
+   bps_yaml: bps_step3a_warps.yaml
+   depends_on: [step2e-step2f]
+ - id: step3a-coadds
+   bps_yaml: bps_step3a_coadds.yaml
+   depends_on: [step3-warps]
+ - id: step3b-step3c
+   bps_yaml: bps_step3b_step3c.yaml
+   depends_on: [step3a-coadds]
+# - id: step3d
+#   bps_yaml: bps_step3d.yaml
+#   depends_on: [step3b-step3c]
+ - id: step4a
+   bps_yaml: bps_step4a.yaml
+   depends_on: [step3b-step3c]
+ - id: step4b
+   bps_yaml: bps_step4b.yaml
+   depends_on: [step4a]
+ - id: step4c
+   bps_yaml: bps_step4c.yaml
+   depends_on: [step4b]
+ - id: step4d-step4e
+   bps_yaml: bps_step4d_step4e.yaml
+   depends_on: [step4c]
+# - id: step4f
+#   bps_yaml: bps_step4f.yaml
+#   depends_on: [step4d-step4e]

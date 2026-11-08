@@ -1,0 +1,8 @@
+includeConfigs:
+- /sdf/data/rubin/user/jchiang/CM/multisite/bps/bps_baseline.yaml
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step2a-recalibrate-global"
+
+payload:
+  dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2' "
+

@@ -1,0 +1,19 @@
+includeConfigs:
+- ${DRP_PIPE_DIR}/bps/clustering/LSSTCam/DRP-clustering.yaml
+- ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
+- ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
+- /sdf/data/rubin/user/jchiang/CM/multisite/bps/bps_clustering_tweaks.yaml
+
+lsstVersion: ${WEEKLY}
+
+payload:
+  payloadName: lsstcam_drp
+  butlerConfig: dp2_prep
+  inCollection: u/jchiang/multisite/SV_320_15/95_visits,LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
+  output: u/jchiang/multisite_test/{lsstVersion}
+
+numberOfRetries: 4
+retryUnlessExit: [2]
+memoryMultiplier: 2
+
+extraRunQuantumOptions: "--no-raise-on-partial-outputs"

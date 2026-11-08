@@ -1,0 +1,23 @@
+cluster:
+  step1detector:
+    partitionMaxClusters: 5000
+  step2d_refitpsf:
+    partitionMaxClusters: 5000
+  step2d_visits:
+    partitionMaxClusters: 5000
+  step4a_reprocess_standardize:
+    partitionMaxClusters: 5000
+  diffim:
+    partitionMaxClusters: 5000
+  step4c_forced_phot:
+    partitionMaxClusters: 5000
+  step4c_forced_phot_dia:
+    partitionMaxClusters: 5000
+  deconvolve_tract_band:
+    partitionMaxClusters: 5000
+  measureObjectUnforced_tract_band:
+    partitionMaxClusters: 5000
+  fitDeepCoaddPsfGaussians_tract_band:
+    partitionMaxClusters: 5000
+  measureObjectForced_tract_band:
+    partitionMaxClusters: 5000
