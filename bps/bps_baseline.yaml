@@ -2,7 +2,7 @@ includeConfigs:
 - ${DRP_PIPE_DIR}/bps/clustering/LSSTCam/DRP-clustering.yaml
 - ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
 - ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
-- /sdf/data/rubin/user/jchiang/CM/multisite/bps/bps_clustering_tweaks.yaml
+- ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
 
 lsstVersion: ${WEEKLY}
 
