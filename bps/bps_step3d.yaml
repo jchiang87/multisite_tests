@@ -1,5 +1,5 @@
 includeConfigs:
-- ${MULTISITE_TESTS_DIR}/bps/bps_baseline.yaml
+- ${PWD}/bps/bps_baseline.yaml
 
 pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step3d-coadd-hips"
 

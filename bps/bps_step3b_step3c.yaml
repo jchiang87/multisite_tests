@@ -1,5 +1,5 @@
 includeConfigs:
-- ${MULTISITE_TESTS_DIR}/bps/bps_baselne.yaml
+- ${PWD}/bps/bps_baselne.yaml
 
 pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step3b-coadd-global,step3c-coadd-gray-images"
 
