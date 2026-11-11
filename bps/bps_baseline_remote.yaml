@@ -3,14 +3,14 @@
 
 # Modify these entries depending on site and desired stack version.
 lsstVersion: w_2026_45
-site: RAL
+computeSite: RAL
 tract: 7277
 taggedCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/{tract}
 
 includeConfigs:
 - ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
 - ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
-- ${DRP_PIPE_DIR}/bps/htcondor/{SITE}_defaults.yaml
+- ${DRP_PIPE_DIR}/bps/htcondor/{computeSite}_defaults.yaml
 - ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
 
 payload:
