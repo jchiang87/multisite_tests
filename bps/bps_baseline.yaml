@@ -4,13 +4,12 @@ includeConfigs:
 - ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
 - ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
 
-lsstVersion: ${WEEKLY}
+lsstVersion: w_2026_45
 
 payload:
-  payloadName: lsstcam_drp
+  payloadName: multisite_test/{lsstVersion}
   butlerConfig: dp2_prep
-  inCollection: u/jchiang/multisite/SV_320_15/95_visits,LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
-  output: u/jchiang/multisite_test/{lsstVersion}
+  inCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7277,LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
 
 numberOfRetries: 4
 retryUnlessExit: [2]
