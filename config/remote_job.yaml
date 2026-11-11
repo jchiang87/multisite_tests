@@ -1,0 +1,26 @@
+# Example yaml config file for running `bps submitcmd` using htcondor
+#
+
+bpsBatchSubmission: true
+bpsUseRunTempSpace: true
+bpsUseShared: false
+bpsMakeCommand: false
+
+lsstVersion: w_2026_45
+
+site:
+  RAL:
+    nodeset: "RAL"
+
+submitCmd: true
+computeSite: RAL
+
+customJob:
+  queue: ""
+  executable: run_transfer.sh
+  arguments: ""
+  requestCpus: 16
+  requestMemory: 64000
+
+payload:
+  payloadName: transfer_to_SLAC
