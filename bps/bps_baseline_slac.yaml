@@ -1,15 +1,20 @@
+# This is config can be used for running at SLAC.
+lsstVersion: w_2026_45
+tract: 7277
+taggedCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/{tract}
+
 includeConfigs:
 - ${DRP_PIPE_DIR}/bps/clustering/LSSTCam/DRP-clustering.yaml
 - ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
 - ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
 - ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
 
-lsstVersion: w_2026_45
-
 payload:
   payloadName: multisite_test/{lsstVersion}
   butlerConfig: dp2_prep
-  inCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7277,LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
+  inCollection: {taggedCollection},LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
+  # One can override this as desired:
+  output: u/{operator}/{payloadName}
 
 numberOfRetries: 4
 retryUnlessExit: [2]

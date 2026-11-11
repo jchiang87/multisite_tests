@@ -1,0 +1,27 @@
+# Until the branch is merged, using this requires the tickets/DM-56113
+# branch of drp_pipe to be set up.
+
+# Modify these entries depending on site and desired stack version.
+lsstVersion: w_2026_45
+site: RAL
+tract: 7277
+taggedCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/{tract}
+
+includeConfigs:
+- ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
+- ${DRP_PIPE_DIR}/bps/compression/LSSTCam/DRP-compression.yaml
+- ${DRP_PIPE_DIR}/bps/htcondor/{SITE}_defaults.yaml
+- ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
+
+payload:
+  payloadName: multisite_test/{lsstVersion}
+  butlerConfig: dp2_prep
+  inCollection: {taggedCollection},LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
+  # One can override this as desired:
+  output: u/{operator}/{payloadName}
+
+numberOfRetries: 4
+retryUnlessExit: [2]
+memoryMultiplier: 2
+
+extraRunQuantumOptions: "--no-raise-on-partial-outputs"
