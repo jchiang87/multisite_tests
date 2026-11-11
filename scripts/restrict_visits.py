@@ -15,7 +15,7 @@ condition = f"where observationId >= {exposures[0]} and observationId <= {exposu
 print(condition)
 
 repo = "dp2_prep"
-collections = ["u/jchiang/multisite_test/w_2026_44"]
+collections = ["u/jchiang/multisite_test/w_2026_45"]
 
 butler = daf_butler.Butler(repo, collections=collections)
 
