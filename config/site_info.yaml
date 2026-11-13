@@ -8,7 +8,8 @@ sites:
     rse_root: /sdf/group/rubin/repo/dp2_prep
     dtn_url: davs://sdfdtn005.slac.stanford.edu:1094/lsst/butlerdisk/rucio/repo/dp2_prep/
     tract: 7040
-    collection:
+    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+
   - name: IN2P3
     repo: dp2_prep
     rucio_rse: IN2P3_BUTLER_DISK
@@ -16,7 +17,8 @@ sites:
     rse_root: /pnfs/in2p3.fr/lsst/butler/dp2_prep/
     dtn_url: davs://ccdavrubin.in2p3.fr:2880/pnfs/in2p3.fr/lsst/butler/dp2_prep/
     tract: 7041
-    collection:
+    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+
   - name: LANCS
     repo: dp2_prep
     rucio_rse: LANCS_BUTLER_DISK
@@ -24,7 +26,8 @@ sites:
     rse_root: /cephfs/grid/lsst/repos/dp2_prep/
     dtn_url: davs://xgate.hec.lancs.ac.uk:1094/cephfs/grid/lsst/repos/dp2_prep/
     tract: 7276
-    collection:
+    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+
   - name: RAL
     repo: dp2_prep
     rucio_rse: RAL_BUTLER_DISK
@@ -32,4 +35,19 @@ sites:
     rse_root: /lsst:datadisk/butler/repos/dp2_prep/
     dtn_url: https://webdav.echo.stfc.ac.uk:1094/lsst:datadisk/butler/repos/dp2_prep/
     tract: 7277
-    collection:
+    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+
+dstypes:
+  stage2_inputs:
+    - isolated_star
+    - isolated_star_association
+    - preliminary_visit_image
+    - single_visit_star_footprints
+    - preliminary_visit_table
+
+  stage2_outputs:
+    - visit_summary
+
+bps_configs:
+  requestCpus: 1
+  requestMemory: 8000

@@ -1,0 +1,23 @@
+bpsBatchSubmission: true
+bpsUseRunTempSpace: true
+bpsUseShared: false
+bpsMakeCommand: false
+
+lsstVersion: {WEEKLY}
+
+site:
+  {SITE}:
+    nodeset: "{SITE}"
+
+submitCmd: true
+computeSite: {SITE}
+
+customJob:
+  queue: ""
+  executable: {BASH_SCRIPT}
+  arguments: ""
+  requestCpus: {REQUEST_CPUS}
+  requestMemory: {REQUEST_MEMORY}
+
+payload:
+  payloadName: {PAYLOAD_NAME}

@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+from multisite_tests.rucio_registration import main
+
+if __name__ == "__main__":
+   main()
