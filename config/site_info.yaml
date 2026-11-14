@@ -42,11 +42,16 @@ dstypes:
     - isolated_star
     - isolated_star_association
     - preliminary_visit_image
-    - single_visit_star_footprints
+    - preliminary_visit_summary
     - preliminary_visit_table
+    - single_visit_star_footprints
 
   stage2_outputs:
+    - isolated_star_stellar_motions
+    - recalibrated_star
+    - refit_psf_star
     - visit_summary
+    - visit_table
 
 bps_configs:
   requestCpus: 1
