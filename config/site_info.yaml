@@ -38,6 +38,17 @@ sites:
     collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
 
 dstypes:
+  step2ac_inputs:
+    - isolated_star
+    - isolated_star_association
+    - preliminary_visit_summary
+
+  step2ac_outputs:
+    - fgcmPhotoCalibCatalog
+    - fgcm_standard_star
+    - gbdesHealpix3AstrometricFitSkyWcsCatalog
+    - gbdesHealpix3AstrometricFit_fitStars
+
   stage2_inputs:
     - isolated_star
     - isolated_star_association
