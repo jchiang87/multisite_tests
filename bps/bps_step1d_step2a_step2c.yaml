@@ -1,0 +1,7 @@
+includeConfigs:
+- ${PWD}/bps/bps_baseline.yaml
+
+pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step1d-single-visit-global,step2a-recalibrate-global,step2c-recalibrate-healpix"
+
+payload:
+  dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2' "
