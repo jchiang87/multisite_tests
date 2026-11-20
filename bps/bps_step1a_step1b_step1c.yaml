@@ -4,6 +4,6 @@ includeConfigs:
 pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step1a-single-visit-detectors,step1b-single-visit-visits,step1c-single-visit-tracts"
 
 payload:
-  dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2' and tract in ({tract})"
+  dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2'"
 
 extraQgraphOptions: "--dataset-query-constraint raw"
