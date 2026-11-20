@@ -5,5 +5,3 @@ pipelineYaml: "${DRP_PIPE_DIR}/pipelines/LSSTCam/DRP.yaml#step2f-recalibrate-glo
 
 payload:
   dataQuery: "instrument='LSSTCam' and skymap='lsst_cells_v2'"
-
-extraQgraphOptions: "--dataset-query-constraint visit_summary"
