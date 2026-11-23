@@ -62,6 +62,30 @@ dstypes:
   step_2f_outputs:
     -visit_table
 
+  step_3b_inputs:
+    - deepCoadd_dcr_ddec_map_weighted_mean
+    - deepCoadd_dcr_dra_map_weighted_mean
+    - deepCoadd_dcr_e1_map_weighted_mean
+    - deepCoadd_dcr_e2_map_weighted_mean
+    - deepCoadd_epoch_map_max
+    - deepCoadd_epoch_map_mean
+    - deepCoadd_epoch_map_min
+    - deepCoadd_exposure_time_map_sum
+    - deepCoadd_psf_e1_map_weighted_mean
+    - deepCoadd_psf_e2_map_weighted_mean
+    - deepCoadd_psf_maglim_map_weighted_mean
+    - deepCoadd_psf_size_map_weighted_mean
+    - deepCoadd_sky_background_map_weighted_mean
+    - deepCoadd_sky_noise_map_weighted_mean
+    - deep_coadd_input_summary_tract
+    - deep_coadd_tract_mask_fraction_metrics
+    - object_all
+    - object_metrics
+    - object_parent_metrics
+    - object_ref_match_astrom_metrics
+    - template_coadd_input_summary_tract
+    - template_coadd_tract_mask_fraction_metrics
+
   steps_3b_3c_3d_inputs:
     - deepCoadd_dcr_ddec_map_weighted_mean
     - deepCoadd_dcr_dra_map_weighted_mean
