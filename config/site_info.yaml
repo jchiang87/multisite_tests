@@ -60,7 +60,7 @@ dstypes:
     - visit_summary
 
   step_2f_outputs:
-    -visit_table
+    - visit_table
 
   step_3b_inputs:
     - deepCoadd_dcr_ddec_map_weighted_mean
