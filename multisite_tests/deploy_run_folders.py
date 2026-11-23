@@ -8,7 +8,7 @@ from .rucio_registration import get_site_info
 _PKG_DIR = Path(os.environ['MULTISITE_TESTS_DIR'])
 
 
-def deploy_bps_folder(site_dir, site, weekly, tract):
+def deploy_bps_folder(site_dir, site_info, weekly):
     bps_dir = site_dir / "bps"
     os.makedirs(bps_dir, exist_ok=True)
     bps_files = sorted(glob.glob(str(_PKG_DIR / "bps/bps*yaml")))
@@ -17,8 +17,9 @@ def deploy_bps_folder(site_dir, site, weekly, tract):
     baseline_template = ( (_PKG_DIR / "config/bps_baseline.yaml")
                           .read_text(encoding="utf-8") )
     output = ( baseline_template.replace("{WEEKLY}", weekly)
-               .replace("{TRACT}", str(tract))
-               .replace("{SITE}", site) )
+               .replace("{SITE}", site_info.name)
+               .replace("{PAYLOAD_NAME}", site_info.payload_name)
+               .replace("{TAGGED_COLLECTION}", site_info.tagged_collection) )
     with open(bps_dir / "bps_baseline.yaml", "w") as fobj:
         fobj.write(output)
 
@@ -47,12 +48,11 @@ def deploy(site, weekly, dest_dir, site_config_file):
 
     site_info = get_site_info(site_config_file=site_config_file, weekly=weekly)
     for site in sites:
-        tract = str(site_info[site].tract)
         site_dir = Path(dest_dir) / site
         if os.path.isdir(site):
             continue
         os.makedirs(site_dir, exist_ok=True)
-        deploy_bps_folder(site_dir, site, weekly, tract)
+        deploy_bps_folder(site_dir, site_info[site], weekly)
 
 
 @cli.command("update",
@@ -72,14 +72,13 @@ def update(site, weekly, dest_dir, site_config_file):
         sites = [site]
     site_info = get_site_info(site_config_file=site_config_file, weekly=weekly)
     for site in sites:
-        tract = str(site_info[site].tract)
         site_dir = Path(dest_dir) / site
         if not os.path.isdir(site_dir):
             raise RuntimeError(f"{site_dir} does not exist")
         # Clear out bps sub-folder, make new symlinks and bps_baseline.yaml.
         for item in glob.glob(str(site_dir / "bps/bps*.yaml")):
             os.remove(item)
-        deploy_bps_folder(site_dir, site, weekly, tract)
+        deploy_bps_folder(site_dir, site_info[site], weekly)
 
 
 def main():

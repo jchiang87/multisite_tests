@@ -20,15 +20,16 @@ class SiteInfo:
     scope: str
     rse_root: str
     dtn_url: str
-    tract: int
-    collection_template: str
+    tagged_collection: str
+    payload_name: str
     weekly: str = ""
     ticket: str = ""
 
     @property
     def collection(self):
-        vars = {"WEEKLY": self.weekly, "TICKET": self.ticket}
-        return self.collection_template.format(**vars)
+        user = os.environ['USER']
+        payload_name = self.payload_name.replace("{lsstVersion}", self.weekly)
+        return "/".join(["u", user, payload_name])
 
 
 def read_site_config(section, site_config_file=None):

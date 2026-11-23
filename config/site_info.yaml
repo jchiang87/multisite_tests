@@ -7,8 +7,8 @@ sites:
     scope: dp2_prep
     rse_root: /sdf/group/rubin/repo/dp2_prep/
     dtn_url: davs://usdf-xrootd.slac.stanford.edu:1094/lsst/butlerdisk/rucio/repo/dp2_prep/
-    tract: 7277
-    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+    tagged_collection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7277
+    payload_name: multisite_test_7277/{lsstVersion}
 
   - name: IN2P3
     repo: dp2_prep
@@ -16,8 +16,8 @@ sites:
     scope: dp2_prep
     rse_root: /pnfs/in2p3.fr/lsst/butler/dp2_prep/
     dtn_url: davs://ccdavrubin.in2p3.fr:2880/pnfs/in2p3.fr/lsst/butler/dp2_prep/
-    tract: 7276
-    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+    tagged_collection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7276
+    payload_name: multisite_test_7276/{lsstVersion}
 
   - name: LANCS
     repo: dp2_prep
@@ -25,8 +25,8 @@ sites:
     scope: dp2_prep
     rse_root: /cephfs/grid/lsst/repos/dp2_prep/
     dtn_url: davs://xgate.hec.lancs.ac.uk:1094/cephfs/grid/lsst/repos/dp2_prep/
-    tract: 7040
-    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+    tagged_collection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7040
+    payload_name: multisite_test_7040/{lsstVersion}
 
   - name: RAL
     repo: dp2_prep
@@ -34,8 +34,8 @@ sites:
     scope: dp2_prep
     rse_root: /lsst:datadisk/butler/repos/dp2_prep/
     dtn_url: davs://webdav.echo.stfc.ac.uk:1094/lsst:datadisk/butler/repos/dp2_prep/
-    tract: 7041
-    collection_template: LSSTCam/runs/DRP/{WEEKLY}/{TICKET}
+    tagged_collection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/7041
+    payload_name: multisite_test_7041/{lsstVersion}
 
 dstypes:
   steps_1d_2a_2c_inputs:

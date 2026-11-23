@@ -3,7 +3,6 @@
 
 # Modify these entries depending on site and desired stack version.
 lsstVersion: {WEEKLY}
-tract: {TRACT}
 
 includeConfigs:
 - ${DRP_PIPE_DIR}/bps/resources/LSSTCam/DRP.yaml
@@ -12,9 +11,9 @@ includeConfigs:
 - ${MULTISITE_TESTS_DIR}/bps/bps_clustering_tweaks.yaml
 
 payload:
-  payloadName: multisite_test_{tract}/{lsstVersion}
+  payloadName: {PAYLOAD_NAME}
   butlerConfig: dp2_prep
-  inCollection: LSSTCam/raw/20250604-20250921/SV_320_15/DM-57008/{tract},LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
+  inCollection: {TAGGED_COLLECTION},LSSTCam/calib,refcats,skymaps,pretrained_models,LSSTCam/calib/fgcmcal,mpcorb,sorcha_cache
   # One can override this as desired:
   output: u/{operator}/{payloadName}
 
