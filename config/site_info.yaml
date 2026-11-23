@@ -47,6 +47,54 @@ dstypes:
     - preliminary_visit_summary
     - single_visit_star_ref_match_astrom_metrics
 
+  steps_1d_2a_2c_outputs:
+    - fgcmPhotoCalibCatalog
+    - fgcm_standard_star
+    - gbdesHealpix3AstrometricFitSkyWcsCatalog
+    - gbdesHealpix3AstrometricFit_fitStars
+    - preliminary_visit_table
+
+  step_2f_inputs:
+    - recalibrated_star_association_metrics
+    - recalibrated_star_ref_match_astrom_metrics
+    - visit_summary
+
+  step_2f_outputs:
+    -visit_table
+
+  steps_3b_3c_3d_inputs:
+    - deepCoadd_dcr_ddec_map_weighted_mean
+    - deepCoadd_dcr_dra_map_weighted_mean
+    - deepCoadd_dcr_e1_map_weighted_mean
+    - deepCoadd_dcr_e2_map_weighted_mean
+    - deepCoadd_epoch_map_max
+    - deepCoadd_epoch_map_mean
+    - deepCoadd_epoch_map_min
+    - deepCoadd_exposure_time_map_sum
+    - deepCoadd_psf_e1_map_weighted_mean
+    - deepCoadd_psf_e2_map_weighted_mean
+    - deepCoadd_psf_maglim_map_weighted_mean
+    - deepCoadd_psf_size_map_weighted_mean
+    - deepCoadd_sky_background_map_weighted_mean
+    - deepCoadd_sky_noise_map_weighted_mean
+    - deep_coadd
+    - deep_coadd_input_summary_tract
+    - deep_coadd_tract_mask_fraction_metrics
+    - object_all
+    - object_metrics
+    - object_parent_metrics
+    - object_ref_match_astrom_metrics
+    - template_coadd_input_summary_tract
+    - template_coadd_tract_mask_fraction_metrics
+
+  step_4b_outputs:
+    - preloaded_ss_object_visit
+
+  steps_4d_4e_4f_inputs:
+    - analysis_source_association_metrics
+    - pretty_coadd
+    - ss_source_associated
+
 bps_configs:
   requestCpus: 1
   requestMemory: 8000
